@@ -1,0 +1,41 @@
+# 3.3.1 Strength of Predictors
+For a well-performing prediction model, strong predictors have to be present.
+
+Strength is a function of the association of the predictor with the outcome ("effect size"), and the distribution of the predictor.
+For example, a dichotomous predictor with an odds ratio of 2.0 is more relevant for a prediction model than a dichotomous predictor 
+with an odds ratio of 2.5, when the first predictor is distributed in a 50:50 ratio (50% prevalence of the predictor), and the second
+1:99 (1% prevalence of the predictor). 
+Similarly, continuous predictors have to cover a wide range to make them relevant for prediction.
+
+When some characteristics are considered as key predictors, these have to be registered carefully, with clear definitions and preferably 
+no missing values. This is usually best possible in a prospective study, with a protocol and prespecified data collection form.
+
+# 3.3.2 Categories of Predictors 
+Several categories of predictors have been suggested for prediction models [225].
+These include 
+- demographics (e.g., age, sex, race, education, socioeconomic status, ? BMI)
+- type and severity of disease (e.g., principal diagnosis, presenting characteristics)
+- history characteristics (e.g., previous disease episodes, risk factors)
+- comorbidity (concomitant diseases)
+- physical functional status (e.g., Karnofsky score, WHO performance score), and 
+- subjective health status and quality of life (psychological, cognitive, psychosocial functioning).
+
+# 3.3.3 Costs of Predictors 
+Predictors may require different costs, in monetary terms, but also in burden for a patient. In a prediction context, it is evident that 
+information that is easy to obtain should be considered before information that is more difficult to obtain. Hence, we should first consider
+characteristics such as demographics and patient history, followed by simple diagnostic tests, and finally invasive and/or costly tests.
+
+# 3.3.4 Determinants of Prognosis 
+Prognosis can also be viewed in a triangle of interacting causes. Predictors may be separated as related to environment (e.g., socioeconomic conditions, 
+health care access and quality, climate), the host (e.g., demographic, behavioral, psychosocial, premorbid biologic factors), and disease (e.g., imaging, 
+pathophysiologic, genomic, proteomic, metabolomic factors)[237].
+
+# 3.3.5 Prognosis in Oncology 
+For prognosis in oncology, it has been proposed to separate factors related to the patient, the tumor and to treatment [239]. Examples of patients characteristics
+include demographics (age, sex, race/ethnicity, SES), comorbidity, and functional status. Tumor characteristics include the extent of disease (e.g., reflected in TNM stage), 
+pathology, and sometimes values of tumor markers. Treatment may commonly include (combinations of) surgery, chemotheray, and radiotherapy.
+
+
+
+
+
