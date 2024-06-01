@@ -1,0 +1,23 @@
+# 3.4.1 Observer variability
+We generally prefer predictors that are well-defined and reliably measured by any observer [73, 355].
+In practice, observer variability is a problem for many measurements [73]. Disciplines include, for example, pathologists, who may 
+unreliably score tissue specimens for histology, cell counts, coloring of cells, and radiologists, who, for example, score X-rays,
+CT scans, MRI scans, and ultrasound measurements. 
+
+This variability is typically quantified with kappa statistics [321]. The interobserver and intraobserver variability can be substantial, 
+which will be reflected in low kappa values. Such measurement error poses challenges to the generalizability of a prediction model.
+
+# 3.4.3 Biological Variability 
+Apart from observer variablity, some measurements are prone to biological variability. A well-known example is blood pressure, where a single
+measurement is quite unreliable. Usually, at least two measurements are made, and preferably more, with some spread in time. Again, definitions 
+have to be clear (e.g., position of patient at the measurement, time of day).
+
+# 3.4.4 Regression Dilution Bias 
+THe effect of unreliable scoring by observers, or biological variability, generally is a dilution of associations of predictors with the outcome.
+This has been labeled "regression dilution bias", and methods have been proposed to correct for this bias [334]. A solution is to repeat unreliable 
+measurements, either by the same observer or different observers.
+
+# 3.4.6 Choice of Predictors 
+In etiologic research, we may often aim for the best assessment of a predictor. We will be concerned about various information biases that may occur.
+In the context of a prediction model, we can be more pragmatic [390]. If we aim to develop a model that is applicable in daily practice, we should use 
+definitions and scorings that are in line with daily practice. 
