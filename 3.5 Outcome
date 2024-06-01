@@ -1,0 +1,39 @@
+# 3.5.1 Types of Outcomes
+
+Prognostic outcome 
+- fatal events (all-cause, or cause-specific. Hard end point, relevant in many diseases, but sometimes too infrequent for reliable statistical modeling)
+- nonfatal events (recurrence of tumor, cardiovascular events, e.g., myocardial infarction, revascularization. Somewhat softer end point, reflecting decision-making by physicians,
+  increases sample size for analysis)
+- patient-centered (Symptoms, functional status, health-related quality of life, utilities. Subjective end point, focused on the patients themselves, often used as secondary end point)
+- Wider burden (Absence from work because of sickness. Especially of interest from an economical point of view)
+
+# 3.5.2 survival end points 
+
+# 3.5.3 Examples: 5-Year Relative Survival in Cancer Registries
+
+# 3.5.4 Composite End Points
+Sometimes, composite end points are defined, which combine mortality with nonfatal events. Composite end points are especially popular in cardiovascular research. 
+For example, the Framingham models have been used to predict incident cardiovascular disease in the general population. A popular Framingham model (the Wilson model)
+defines cardiovascular events as fatal or nonfatal myocardial infarction, sudden death, or angina pectoris (stable or unstable).
+
+Composite end points have the advantage of increasing the effective sample size, and hence the power for statistical analyses, at the price of having to assume similar prognostic 
+associations for each of the end point components.
+
+# 3.5.5 Example: Composite End Points in Cardiology 
+A prediction model was developed in 949 patients with decompensated heart failure. The outcomes were 60-day mortality and the composite end point of death or rehospitalization 
+at 60 days. The discriminatory power of the model was substantial for the mortality model (c statistic 0.77) but less for the composite end point (c statistic 0.69). These findings
+are in line with prediction of acute coronary syndromes, where predictive performance was better for mortality than for a composite end point of mortality or myocardial (re)infarction.
+
+# 3.5.6 Choice of Prognostic Outcome
+The choice of a prognostic outcome should be guided by the context, but the outcome should be measured as reliably as possible. Prediction models may be developed with pragmatic 
+definitions of predictors, since this may resemble the future use of a model. But the outcome should be determined with similar rigor as in an etiologic study or randomized 
+clinical trial. Predictions, hence, need to be based on robust statistical associations with an accurately determined outcome.
+
+If there is a choice between binary and continuous outcomes, the latter are preferred from a statistical perspective, since they provide more power in the statistical analysis.
+Also, ordered outcomes have more power than binary outcomes. In practice, binary outcomes are however very popular, making logistic regression and Cox regression the most common 
+prediction models in medicine [653].
+
+# 3.5.7 Diagnostic End points
+
+# 3.5.8 Example: PET Scans in Esophageal Cancer
+
