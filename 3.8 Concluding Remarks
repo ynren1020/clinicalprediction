@@ -1,0 +1,16 @@
+Prognostic studies are ideally designed as prospective cohort studies, where the selection of patients and definition of predictors is prespecified. Data from 
+randomized clinical trials may often be useful, although representativeness of the included patients for the target population should be considered as a limitation. 
+Data may also be used from retrospective designs, registries, and case-control studies, each with their strengths and limitations. 
+
+Diagnostic studies are usually cross-sectional in design and should prospectively select all patients who are suspected of a disease of interest. In practice, designs are 
+still frequent where patients are selected based on a reference test which is not performed in all patients.
+
+Predictors may be defined pragmatically and cover the relevant areas in a disease. The outcome of a prediction model should be measured with high accuracy. Hard end points such 
+as mortality are often preferred. 
+
+With any study design, we should aim for large sample size for reliable testing and estimation of predictor effects, reliable model building, and reliable assessment of 
+model performance. At least 100 events may be required for any model development or validation, and more for detailed modeling and addressing more refined research questions.
+A development sample with 100 events corresponds to EPS = 10 with 10 candidate predictors. More than 100 events are needed if more than 10 candidate predictors are considered.
+Higher sample size are desired for multi-setting validation, with data from many different settings if claims about generalizability are made.
+
+
