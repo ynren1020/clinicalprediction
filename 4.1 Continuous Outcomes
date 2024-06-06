@@ -1,0 +1,42 @@
+Continuous outcomes have traditionally received most attention in texts on regression modeling, with the ordinary least square model ("linear regression") as the reference statistical
+model. 
+                    y = alpha + betai*xi + error
+where alpha is the model intercept, and betai refers to the set of regression coefficients that relate one or more predictors xi to the outcome y.
+The error is calculated as observed y-predicted y (or y - capy). The difference is also known as the residual for the prediction of y. We estimate the regression coefficients
+a for the intercept alpha and bi for the regression coefficients betai.
+
+4.1.1 Examples of Linear Regression
+An example of a medical outcome is blood pressure. We may want to predict the blood pressure after treatment with an anti-hypertensive or other intervention.
+Also, quality of life scales may be relevant to evaluate. Such scales are strictly speaking only ordinal, but can for practical purposes often be treated as continuous outcomes.
+A specific issue is that quality of life scores have ceiling effects, because minimum and maximum scores apply.
+
+4.1.4 Transforming the outcome
+An important issue in linear regression is whether we should transform the outcome variable. The residuals from a linear regression should have a normal distribution with a constant
+spread ("homoscedasticity"). This can sometimes be achieved by a log transformation for cost data, but other transformations are also possible. As Harrel points out, transformations
+of the outcome may reduce the need to include transformations of predictor variables [225]. Care should be taken in backtransforming predicted mean outcomes to the orignal scale. 
+Predicted medians and other quantiles are not affected by a monotone transformation, but the mean is. The lognormal distribution can be used for the mean on the original scale after a 
+log transformation, but a more general, nonparametric, approach is to use "smearing" estimators [443].
+
+4.1.5 Performance: Explained Variation
+In linear regression analysis, the total variance in y is labeled the total sum of squares ("TSS"). TSS is the sum of variability explained by one or more predictors ("model sum of squares",MSS)
+and the error ("residual sum of squares", RSS): 
+                      TSS = MSS + RSS = var(regression on xi) + var(error) = sum(cap y - mean(y))^2 + sum(y - cap y)^2
+
+The estimates of the variance follow from the statistical fit of the model to the data, which is based on the analytical solution of the least squares formula. This fit minimizes
+the error term in the model and maximizes the variance explained by xi. Better prediction models explain more of the variance in y. R^2 is defined as MSS/TSS [653].
+
+4.1.6 More Flexible Approaches
+The generalized additive model (GAM) is a more flexible variant of the linear regression model [231, 653]. A GAM allows especially for more flexibility in continuous predictors.
+It replaces the usual linear combination of continuous predictors with a sum of smooth functions to discover potential nonlinear effects:
+                    y = alpha + fi(xi) + error
+where fi refers to functions for each predictor, e.g., loess (or "lowess") smoothers.
+Loess smoothers are based on locally weighted polynomial regression [102]. At each point in the data set, a low-degree polynomial is fit to a subset of the data, with data values
+near the point where the outcome y is considered. A polynomial is fitted using weighted least squares, giving more weight to nearby points and less weight to points further away.
+The degree of the polynomial model and the weights can be chosen by the analyst. 
+
+A GAM assumes that the outcome is already appropriately transformed, and then automatically estimates the transformation of continuous predictors to optimize relations with the outcome.
+
+An even more flexible approach is to transform y and X simultaneously to maximize the correlation between the transformed y and the transformed X [225, 231]:
+                    g(y) = alpha + fi(xi) + error,
+where g refers to a transformation of the outcome y and fi refers to functions for each predictor. For cost data, several other specific approaches have been proposed [378].
+
