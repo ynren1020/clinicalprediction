@@ -1,0 +1,61 @@
+Binary outcomes are most common for diagnostic (presence of disease) or prognostic research questions (e.g., mortality, morbidity, complications). The logistic regression model is the most
+widely used statistical technique for such binary outcomes. The model is flexible in that it can incorporate binary, categorical and continuous predictors, nonlinear transformations,
+and interaction terms. 
+Many of the principles of linear regression also apply for logistic regression, which is an example of a generalized linear model. 
+As in linear regression, the binary outcome y is linked to a linear combination of a set of predictors and regression coefficients betai.
+We use the logistic link function to restrict predictions to the interval <0,1>.
+The model is stated in terms of the probability that y = 1 ("p(y=1)"), rather than the outcome directly.
+
+Specifically, we write the model as a linear function in the logistic transformation (logit), where logit(p(y=1))=log(odds(p(y=1))), or log(p(y=1)/(p(y=1)+1)):
+                    logit(p(y=1)) = a + bi*xi = lp
+where logit indicates the logistic transformation, a is an estimate for the intercept alpha, bi are the estimated regression coefficients for betai, xi are the predictors, and lp is the linear predictor.
+
+The coefficients bi are usually estimated by standard maximum likelihood in a logistic regression approach, but this is not necessarily the case. For example, we will discuss penalized
+maximum likelihood methods to shrink the bi for predictive purposes. Many variants of shrinkage and penalization have been proposed over recent years, including the LASSO and elastic net.
+The exponent of the regression coefficient (e^b) indicates the odds ratio, the ratio of the odds of the binary outcome y.
+
+Predicted probabilities can be calculated by backtransforming:
+                    p(y=1) = e^lp/(1+e^lp) = 1/(1+e^-lp)
+
+The quantity exp(lp) or e^lp, is the odds of the outcome. The logistic function has a characteristic sigmoid shape, and is bounded between 0 and 1. 
+
+4.2.1 R^2 in Logistic regression analysis 
+The linear regression examples showed how R^2 is related to the relative spread in predictions. When predictions cover a wider range, the regression model better predicts the outcome.
+This concept also applies to dichotomous outcomes. Better prediction models for dichotomous outcomes have a wider spread in predictions, i.e., predictions close to 0% and close to 100%.
+
+4.2.2 Calculation of R^2 on the Log-Likelihood scale
+Where the linear model is optimized with least squares estimation, the logistic model is usually optimized by maximum likelihood. The likelihood refers to the probability of the data
+given the model and enables estimation of parameters in various nonlinear models. The logarithm of the likelihood (log-likelihood, LL) is usually used for convenience in numerical estimation.
+
+LL = sum(y*log(p)+(1-y)*log(1-p))
+LL0 = sum(y*log(mean(y))+(1-y)*log(1-mean(y)))
+LR = -2(LL0 - LL1)
+Nagelkerke R^2: R^2 = (1-e^(-(LR)))/(1-e^(-2*LL0))
+
+...
+
+4.2.12 Trees versus logistic regression modeling
+Trees have three distinctive characteristics compared to a logistic regression model when we consider a set of potential predictors. 
+1) In a logistic model, a default strategy is to include all predictors as main effects. This model can be extended with interaction terms if the statistical power to examine
+these is sufficient. It is rare to study interaction terms that are more complex than considering three variables (second-order). In contrast, trees by default assume that higher 
+order interactions are present and cannot model the main effects.
+
+2) Continuous variables should not be categorized in regression models [472]. Trees do so by necessity, which causes a loss of information.
+3) We should be very cautious in using stepwise selection methods in a logistic model [563]. Small data sets lack sufficient power to select relevant predictors [225]. A tree, however,
+always needs to be selective in the inclusion of predictors and quickly runs out of cases within branches. Limited power is a major problem in the development of trees: 
+trees are data-hungry [612].
+
+When we fit these models in small parts of GUSTO-I and validate the performance in the full data set, we note substantially better performance for the simple logistic regression 
+models, in line with a large comparative study [153]. Other empirical comparisons also show poor performance of tree models for predictions in a number of medical prediction problems
+[20, 23, 29, 612, 613].
+
+4.2.13 Other methods for binary outcomes
+
+4.2.14 Summary of Binary outcomes
+In sum, logistic regression provides a quite flexible model to derive predictions for binary data. Interactions and nonlinearity can be incorporated. Some other methods, such as
+GAM, neural nets (GNLM), MARS, can be seen as extensions, with the default linear logistic model as a special case. Naive Bayes is a simplified version of logistic regression, 
+ignoring correlations between predictors. Trees can be seen as special cases of logistic regression, requiring categorizations of continuous variables and assuming higher order 
+interactions.
+
+
+
