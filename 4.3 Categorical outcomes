@@ -31,4 +31,5 @@ As probabilities need to sum to 1, the probability of cancer can then be calcula
                 P(cancer) = 1 - P(benign tissue) - P(mature teratoma)
 
 
+
                 
