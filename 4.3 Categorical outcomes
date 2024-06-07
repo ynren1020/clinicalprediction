@@ -1,0 +1,34 @@
+Categorical outcomes without a clear ordering are common in diagnostic medical problems. The diagnostic process starts with considering presenting signs and symptoms of a patient.
+This leads the physician toward a set of differential diagnoses. Each diagnosis has a probability given the patient's clinical and nonclinical profile. Usually, one of these 
+differential diagnoses is defined as the working diagnosis or target disease, to which the diagnostic workup is primarily directed. Consequently, diagnostic studies commonly focus 
+on the ability of tests to include or exclude the presence of this target disease. The alternative diagnoses (which may direct different treatment decisions) are thus included in 
+the outcome category "target disease absent". After dichotomization of the diagnostic outcome, we may develop diagnostic prediction rules with logistic regression analysis. This focus
+on the target disease is a simplification of clinical practice.
+
+4.3.1 Polytomous logistic regression
+Several studies discussed the use of polytomous (or multinomial) logistic regression to accommodate simultaneous prediction of three or more unordered outcome categories [44, 605, 671].
+The model for j outcome categories can be written as 
+                    logodds(y = j versus y = reference) = alphaj + betai,j*xi = lpj
+where j-1 models are fitted each with separate sets of intercept alpha and regression coefficients betai. We illustrate the polytomous model for prediction of three diagnostic outcome
+categories in a detailed case study.
+
+4.3.2 Example: Histology of Residual Masses
+Polytomous logistic regression analysis requires that one of the outcome categories is chosen as the reference category. For the other outcome categories, the polytomous logistic 
+regression analysis fits submodels that compare the outcome categories with the chosen reference. Thus, for each outcome category, different regression coefficients are estimated 
+for each predictor. These submodels together comprise the polytomous model and can be used to estimate the probability of the presence of each diagnostic outcome.
+
+                    Logit(benign vs. cancer) = alphab + beta1,b*x1 + ... + betap,b*xp = betai,bX = lpb;
+                    Logit(teratoma vs. cancer) = alphat + beta1,t*x1 + ... + betap,t*xp = betai,tX = lpt;
+
+The subscript b indicates that we predict the odds of benign tissue, and subscript t for teratoma with p predictors.
+
+The interpretation of the regression coefficients is similar as for dichotomous logistic regression, i.e., the log odds of the outcome (benign tissue or mature teratoma) relative to
+cancer per unit change in the predictor values. The probabilities of benign and teratoma tissue can be calculated by
+               P(benign tissue) = exp(lpb)/(1+exp(lpb)+exp(lpt))
+               P(mature teratoma) = exp(lpt)/(1+exp(lpb)+exp(lpt))
+
+As probabilities need to sum to 1, the probability of cancer can then be calculated by 
+                P(cancer) = 1 - P(benign tissue) - P(mature teratoma)
+
+
+                
