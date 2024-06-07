@@ -1,0 +1,13 @@
+4.4.1 Proportional Odds Logistic regression
+A straightforward extension of the logistic model is the proportional odds logistic model [371]. 
+Here, a common set of regression coefficients is assumed all levels of the outcome and intercepts are estimated for each level.
+The common set of beta coefficients can be thought of as a pooled estimate over the three separate sets of beta coefficients estimated at each possible dichotomization.
+
+An advantage of the proportional odds model is its parsimony in dealing with an ordered outcome. The price we pay is the assumption of proportionality of the odds. This 
+assumption is equivalent to saying that any cut-point on the outcome scale would lead to the same logistic regression coefficient. 
+The model further has very similar assumptions as of the usual logistic model. 
+We can graphically check the proportionality assumption in univariate analyses for each predictor. Distances between points should be identical on the logit scale for each
+category of a predictor. 
+The assumption of proportional odds can formally be assessed with a score test.
+
+
