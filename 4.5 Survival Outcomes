@@ -1,0 +1,54 @@
+Survival, or time-to-event, analysis is appropriate for outcomes that occur during follow-up. The most straightforward outcome is to consider death from any cause. 
+A key characteristic of such survival data is that the follow-up of patients is typically incomplete. For example, some patients may have been followed for 1 year, 
+others for 3 years, etc., while we may be interested in estimates of 5-year survival. Patients with such incomplete data are called censored observations. 
+Because of censoring, logistic regression for the outcome (as a binary variable) is inappropriate. One should think of linear regression on the survival time (a continuous
+outcome), but again censoring makes such an analysis usually inappropriate.
+
+4.5.1 Cox Proportional Hazards Regression
+In medical and epidemiological studies, the Cox proportional hazard model is most often used for survival outcomes [113]. It is the natural extension of the logistic model to the 
+survival setting. Indeed, the Cox model is equivalent to conditional logistic regression, with conditioning at times where events occur [325]. In the logistic model, we use an 
+intercept in the linear predictor, while in the Cox model a baseline hazard function is used. So, baseline risk in the logistic model is given by an intercept, and in the Cox model
+by the baseline hazard function, which can be seen as a time-dependent intercept. The hazard function indicates the risk of the event of interest during follow-up. It is 
+nonparametric in the Cox model. As for the logistic model, simpler and more extensive methods exist, which can be seen as special cases or extensions of the Cox model [579]. 
+The Cox regression model is often stated as a function of the hazard function [653]:
+                lamda(t|X) = lamda(t)exp(beta*X),
+where lamda(t) is the hazard at time t, and beta*X is the linear predictor, beta1*x1 + beta2*x2 + beta3*x3 + ... + betap*xp.
+
+The linear predictor is usually centered at the mean values of the predictors, and exp(beta*X) then indicates the hazard ratio compared to the average risk profile. Note that the 
+linear predictor relates to the log of the hazard: 
+                log(lamda(t|X)) = log(lamda(t)) + beta1*x1 + beta2*x2 + ... + betap*xp
+
+The Cox regression model is semi-parametric. It makes a parametric assumption on the effect of predictors, i.e., proportionality of effect during follow-up. The hazard function lamda(t)
+is nonparametric. This is commonly considered an advantage of the model when we focus on the effect of predictors. Regression coefficients betai can readily be estimated by the partial
+likelihood, and shrinkage or penalization can be done. The quantity exp(beta) is the hazard ratio, similar to how we calculate the odds ratio from a logistic regression coefficient.
+
+4.5.2 Prediction with Cox Models 
+
+4.5.3 Proportionality Assumption
+
+4.5.4 Kaplan-Meier Analysis
+
+4.5.5 Example: Impairment After Treatment of Leprosy
+
+4.5.6 Parametric Survival
+Whereas Kaplan-Meier analysis represents a more nonparametric approach, parametric survival models are less flexible than Cox regression in their dealing with the baseline hazard 
+function. Parametric models typically assume proportionality of the predictor effects, but a more smoothed baseline hazard over time. Examples of parametric models include the 
+exponential model (or Poisson model, using a constant hazard), and the Weibull model (two parameters to let the hazard increase or decrease monotonically over time). The exponential
+and Weibull model can also be seen as examples of accelerated failure time (AFT) models. Here, the effects of predictors are not viewed as multiplicative on the hazards scale, but 
+as multiplicative on the time axis (or additive at the log-time axis). Other examples of AFT models are the lognormal and log-logistic model [225, 653].
+
+Regression coefficients in exponential or Weibull models are hazard ratios after exponentiating. In AFT models, they represent a change in the log-time. The advantage of parametric
+survival models is their concise, parsimonious formulation, and smoothing of the underlying hazard. This makes these models especially attractive for prediction purposes. Extrapolation
+is readily possible with parametric models, but not with Cox or Kaplan-Meier analysis because of their nonparametric nature. Predictions at the end of the follow-up are unstable
+with Cox or Kaplan-Meier analysis, and more robust with parametric methods; at the price of making the assumption that the baseline hazard is modeled well. 
+For estimation of the effect of predictors, the Cox model may often be more suitable, since this model is less restrictive than an exponential or Weibull model. ...
+
+4.5.8 Summary of Survival Outcomes 
+In sum, the Cox regression model provides a default framework for prediction of long-term prognostic outcomes. Kaplan-Meier analysis provides a nonparametric method but requires
+categorization of all predictors. It is the equivalent of cross-tables for binary or categorical outcomes in a survial context. Parametric survival models may be useful for predictive
+purposes because of their parsimony and robustness, for example, at the end of follow-up, or even beyond the observed follow-up. In survival analysis, repeated events may occur, 
+that are correlated because of underlying frailty in individual patients. This asks for extensions of the Cox model when modeling repeated events within the same patients [517, 579].
+
+
+
+
