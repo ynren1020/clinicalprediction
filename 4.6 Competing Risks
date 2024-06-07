@@ -1,0 +1,33 @@
+Prediction of outcomes other than overall mortality is often of interest and may be more complex than a standard survival analysis situation. For example, when we predict
+impairment after treatment of leprosy, some patients might die before the impairment is noted. Death precludes the observation of the event of interest; it is a competing 
+risk to the event of interest (impairment). Similarly, we may be interested in various different events after replacement of heart valves, such as mechanical fracture, but 
+also infection (endocarditis) and thrombotic events; if these lead to explantation of the valve, these events are competing with each other, similar to the risk of death of 
+other causes [446]. 
+
+4.6.1 Actuarial and Actual Risks
+We may focus on the event of interest in a "cause-specific analysis". The effect of a predictor is then analyzed with traditonal Kaplan-Meier analysis or Cox regression analysis
+while simply censoring all other events. This has been labeled as "actuarial risk" analysis [212, 213]. It assumes a world where the competing risks are absent. This perspective
+may be of interest when we aim for a causal interpretation of the effect of predictors on the event of interest [309]. For example, when we aim to reduce a specific event by a 
+specific treatment, the relative effect may well be estimated by a traditional actuarial analysis.
+
+For prediction of absolute risks, especially long-term risks, or risks in the elderly, it is not appropriate to ignore the competing risks [309]. Definitions of "actual risk" 
+acknowlege that competing risks may preclude the observation of the event of interest. Actual risk can be described by the cumulative incidence function (CIF), which can be 
+estimated in different ways [445].
+
+4.6.2 Absolute risk and the Fine & Gray Model
+
+4.6.3 Example: Prediction of Coronary Heart Disease Incidence
+
+4.6.4 Multistate Modeling
+Rather than using cause-specific Cox regression models or a Fine & Gray model, we may also consider the use of a simple multistate model to estimate predictor effects and make 
+absolute risk predictions [445]. Multistate models are considered useful when several events are of interest. Transition probabilities are specified between states, e.g., from 
+healthy to CHD, from healthy to death, and from CHD to death, with model estimation methods common to survival modeling, such as cause-specific Cox models [126]. Multistate models
+are very flexible and can also be used to make dynamic predictions.
+
+Characteristics of models for competing risk modeling
+Categories                              Hazard ratio interpretation                                      Prediction
+Cause-specific hazard models            Effect on event of interest, ignoring competing risks            Need to combine multiple models
+Fine & Gray subdistribution hazard      Impact on cumulative incidence of event of interest              Directly possible
+Multistate model                        Effect on event of interest                                      Multiple (intermediate) events, dynamic in time
+
+
