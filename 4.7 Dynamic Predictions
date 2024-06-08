@@ -1,0 +1,32 @@
+The focus in this book is on making predictions from a defined start point where baseline predictors are measured. Dynamic predictions may, however, also be of interest.
+For example in survival after a cancer diagnosis, patients may be interested in their prognosis given that they survived for some time without recurrence of disease. 
+Their survival estimate will then be higher than at the time of diagnosis. This pattern can well be illustrated with relative survival curves. Similarly, a bond marrow transplant
+recipient may not have had graft versus host disease for some time. He/she will have a better prognosis than at the time of receiving the transplant. A simple method to analyze 
+the impact of such an intermediate event is to use a time-dependent variable in a Cox regression model. More elegant models are available that are better suited for dynamic prediction [622].
+
+4.7.1 Multistate Models and Landmarking
+A multistate model is very useful if we aim to predict the flow of subsequent events, including intermediate states. It can also be used to estimate the cumulative probability for a final
+state, incorporating time-dependent information, such as not being in an intermediate state for some time. Several examples are provided in a tutorial and recent textbooks [180, 445, 622].
+
+For prediction, an interesting approach is to use the concept of "landmarking". Landmarks are fixed points in time during follow-up. We consider patients at risk at the landmark time
+(removing those with earlier events or censoring before the landmark) and update the predictor information, including intermediate events that may have occured. Prediction models can be 
+fitted at each landmark, but stacking of landmark data sets allows for more flexibility in modeling [625]. Fewer parameters may be needed for a landmark model than for a multistate
+model, and predictions are more easily obtained [445].
+
+4.7.2 Joint Models 
+Another situation is that continuous measurements of disease activity are available during follow-up. An example is the prediction of mortality in human immunodeficiency virus(HIV)-
+infected patients based on their longitudinal CD4 cell count measurements [461]. Another example is monitoring of diabetes patients by their blook sugar levels (Hb1Ac measurements).
+We may be interested in predicting complications of diabetes, such as a diabetic foot, based on the dynamic HbA1c pattern [369].
+
+The predictive role of a continuous, dynamic marker can well be modeled with a joint model, which combines a model for longitudinal data (for a repeatedly measured predictor) with time-to
+-event data (for prediction of the event of interest). Dynamic survival probabilities can be estimated for future subjects based on their available longitudinal measurements and 
+a fitted joint model [462].
+
+Technically, we need to define an appropriate model to describe the evolution of the marker in time for each patient. This is typically done using a mixed model, which at least allows
+for subject-specific baseline levels of the marker. Next, the estimated evolutions of the marker are used in a Cox regression model to predict the event of interest. The marker
+level is not assumed constant in time but follows a dynamic pattern. The hazard for the event of interest can be related to the current marker value but also the change in time
+(slope of the trajectory) or the area under the curve [369].
+
+Joint models are of interest for personalized predictions since they utilize random effects and therefore have an inherent subject-specific nature. This may allow to better
+tailor decisions to individual patients, i.e., personalize screening, rather than using the same screening rule for all [462, 585].
+
