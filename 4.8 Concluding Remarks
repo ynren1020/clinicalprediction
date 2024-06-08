@@ -1,0 +1,7 @@
+Regression models are available for several types of outcome that we may want to predict from a start point ("t = 0"), such as continuous outcomes, binary, unordered categorical,
+ordered categorical, survival, and competing outcomes. The corresponding default regression models are the linear, logistic, polytomous, proportional odds, Cox, and Fine & Gray
+regression models, respectively. ....
+
+Special types of data can be encountered that require specific types of analyses. Correlated outcome data may occur by the design of a study, for example, by clustering within 
+patients, or per hospital. Dynamic predictions pose more complex challenges, where multistate, landmarking, and joint models may be useful. Both the specification of such models
+and the evaluation of performance are more complex than considering prediction from a baseline start point t = 0.
