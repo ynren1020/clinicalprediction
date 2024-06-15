@@ -1,0 +1,7 @@
+15.1 Overall Performance Measures
+The distance between the predicted outcome ^y and actual outcome y is a central to quantify overall model performance from a statistical perspective [231].
+The distance, or residual is y - ^y for continuous outcomes. For binary outcomes, ^y is equal to the predicted probability p, and for survival outcomes, it is the predicted time to an event.
+These distance between observed and predicted outcomes are related to the concept of "goodness-of-fit" of a model, and the amount of variability that is explained.
+Better models have smaller distances between predicted and observed outcomes (y - ^y).
+
+15.1.1 Explained Variation: R^2
